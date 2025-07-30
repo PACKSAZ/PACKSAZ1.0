@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "Vazir";
+  src: url("fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Vazirmatn-ExtraBold";
+  src: url("fonts/Vazirmatn-ExtraBold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+body {
+  font-family: "Vazir", Tahoma, sans-serif;
+  background: #ecf4ef;
+  margin: 0;
+  padding: 0;
+  color: #1e4e2f;
+}
+
+header {
+  background-color: #1e4e2f;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.title {
+  font-family: "Vazirmatn-ExtraBold";
+  font-size: 24px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #1e4e2f;
+  padding: 10px;
+}
+
+.menu span {
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.menu span:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+}
+
+form {
+  padding: 1rem;
+}
+
+form input {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+form hr {
+  margin: 15px 0;
+  border-top: 1px dashed #ccc;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  background: #1e4e2f;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#outputArea {
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid #1e4e2f;
+  padding: 10px;
+}
+
+th {
+  background: #1e4e2f;
+  color: white;
+}
+
+.footer {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.menu-icon {
+  font-size: 26px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1001;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0px;
+  height: 100%;
+  width: 200px;
+  background-color: #1e4e2f;
+  color: white;
+  padding: 60px 20px 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu span {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.side-menu span:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.side-menu.show {
+  right: 0;
+}
+.menu-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+
+.side-menu.show {
+  display: flex;
+}
+
+.side-menu span {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.side-menu span:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+body::before {
+  content: "پــک ســاز";
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 80px;
+  font-family: "Vazirmatn-ExtraBold";
+  color: rgba(30, 78, 47, 0.05); /* رنگ خیلی کم‌رنگ */
+  pointer-events: none; /* تا روی کلیک‌ها تاثیر نذاره */
+  z-index: 0;
+}
+

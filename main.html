@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>packsaz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="title">پــــک ســــاز</div>
+  <span class="menu-icon" onclick="toggleMenu()">☰</span>
+</header>
+
+<div id="sideMenu" class="side-menu">
+  <span onclick="newPacking()">پکینگ جدید</span>
+  <span onclick="loadPacking()">باز کردن پکینگ</span>
+  <span onclick="savePacking()">ذخیره</span>
+  <span onclick="saveJPEG()">ذخیره عکس</span>
+  <span onclick="savePDF()">ذخیره PDF</span>
+  <span onclick="enableEditMode()">ویرایش ردیف</span>
+</div>
+
+  <form id="packingForm">
+    <input type="text" id="listTitle" placeholder="عنوان لیست">
+    <hr>
+    <div class="row">
+      <input type="number" id="rowNumber" placeholder="شماره ردیف">
+      <input type="number" id="height" placeholder="ارتفاع (cm)" step="0.01">
+      <input type="number" id="width" placeholder="عرض (cm)" step="0.01">
+      <input type="number" id="length" placeholder="طول (cm)" step="0.01">
+      <input type="number" id="count" placeholder="تعداد" step="1">
+    </div>
+    <div class="row">
+      <button type="submit" class="submit">ثبت</button>
+      <button type="button" id="deleteBtn" style="display:none;" onclick="deleteRow()">حذف</button>
+    </div>
+  </form>
+
+  <div id="outputArea">
+    <table>
+      <thead>
+        <tr><th>متراژ</th><th>تعداد</th><th>طول</th><th>عرض</th><th>ارتفاع</th><th>ردیف</th></tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div class="footer">جمع متراژ: <span id="totalVolume">0</span></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
