@@ -162,8 +162,8 @@ function toggleMenu() {
   menu.classList.toggle("show");
 }
 
-// بستن منو با کلیک خارج از منو
-window.addEventListener("click", function(e) {
+// بستن منو با کلیک یا لمس بیرون از منو
+function closeMenuOnOutsideClick(e) {
   const menu = document.getElementById("sideMenu");
   const icon = document.querySelector(".menu-icon");
   if (
@@ -173,18 +173,8 @@ window.addEventListener("click", function(e) {
   ) {
     menu.classList.remove("show");
   }
-});
+}
 
-
-window.addEventListener("click", function(e) {
-  const menu = document.getElementById("sideMenu");
-  const icon = document.querySelector(".menu-icon");
-  if (
-    !menu.contains(e.target) &&
-    !icon.contains(e.target) &&
-    menu.classList.contains("show")
-  ) {
-    menu.classList.remove("show");
-  }
-});
+window.addEventListener("click", closeMenuOnOutsideClick);
+window.addEventListener("touchstart", closeMenuOnOutsideClick);
 
